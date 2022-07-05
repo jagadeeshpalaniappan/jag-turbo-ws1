@@ -9,10 +9,12 @@ const TODOS_API = "http://localhost:5001/todos";
 
 export const Todos = () => {
   const [todos, setTodos] = React.useState<Todo[]>([]);
+  const [error, setError] = React.useState(null);
   React.useEffect(() => {
     fetch(TODOS_API)
       .then((res: any) => res.json())
-      .then(setTodos);
+      .then(setTodos)
+      .catch(setError);
   }, []);
 
   return (
@@ -21,7 +23,7 @@ export const Todos = () => {
       <p>
         This is `todos` component is from <code>ui</code>
       </p>
-      {/* <p>{process.env.VITE_VERCEL_ENV}</p> */}
+      {error && <p style={{ color: "salmon" }}>Failed to fetch todos</p>}
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>{todo.name}</li>
