@@ -22,9 +22,9 @@ app.get("/api/item/:itemId", (req: Request, res: Response) => {
   res.json({ itemId });
 });
 
-app.listen(port, () => {
-  // tslint:disable-next-line:no-console
-  console.log(`Server started at http://localhost:${port}`);
-});
+// app.listen(port, () => {
+//   // tslint:disable-next-line:no-console
+//   console.log(`Server started at http://localhost:${port}`);
+// });
 
 module.exports = app;
