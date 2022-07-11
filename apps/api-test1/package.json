@@ -8,7 +8,7 @@
     "start": "node -r esbuild-register ./src/index.ts",
     "build": "tsc",
     "lint": "tsc --noEmit && TIMING=1 eslint src/**/*.ts* --fix",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf api"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.0",
